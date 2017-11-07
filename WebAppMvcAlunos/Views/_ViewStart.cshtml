@@ -1,0 +1,16 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Titulo</title>
+</head>
+<body>
+    <div>  @RenderSection("Cabecalho", false) 
+           @Html.Partial("_Menu")
+    </div> 
+    <div class="container body-content"> 
+           @RenderBody() 
+    </div> 
+    <div>  @RenderSection("Rodape", false) </div>
+</body>
+</html>

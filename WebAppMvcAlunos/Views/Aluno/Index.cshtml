@@ -1,0 +1,52 @@
+﻿@model IEnumerable<WebAppMvcAlunos.Models.Aluno>
+
+@{
+    ViewBag.Title = "Alunos disponivéis";
+}
+
+@section Cabecalho
+    {
+        <div class="well">Sistema Web - 2017</div>
+    }
+
+<h2>Alunos disponivéis</h2>
+
+<p>
+    @Html.ActionLink("Novo Aluno", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            
+            @Html.ActionLink("Detalhes", "Sobre", new { id=item.Id }) |
+            
+        </td>
+    </tr>
+}
+
+</table>
+
+@secition Rodape
+{
+    <hr />
+    <footer>
+        <p>&copy; @DateTime.Now.Year - Todos os direitos reservados</p>
+    </footer>
+}
